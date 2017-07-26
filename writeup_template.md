@@ -11,7 +11,7 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: ./test_images_output/white_yellow_example.jpg “Grayscale”
+[image1]: (./test_images_output/white_yellow_example.jpg) “Grayscale”
 [image2]: ./test_images_output/hough_example.jpg “Hough Transform”
 [image3]: ./test_images_output/final_example.jpg “Lane Lines Drawn On”
 
@@ -24,17 +24,17 @@ The goals / steps of this project are the following:
 
 My pipeline starts by making three copies of the image it reads in and extracting its x and y size. I then use two of the copies to select for white and yellow and combine them using weighted_img. 
 
-![alt text][image1](./test_images_output/white_yellow_example.jpg)
+![White and Yellow Filter](./test_images_output/white_yellow_example.jpg)
 
 Afterward, I masked that image with a trapezoid based on the x and y sizes extracted earlier.
 
 I used Gaussian blur with a kernel size of 5 to get rid of irrelevant lines and used 100 and 200 as thresholds for edge detection. My Hough transform used a minimum vote threshold of 3 and a minimum gap and maximum length of 15. 
 
-![alt text][image2]
+![Hough Transform](./test_images_output/hough_example.jpg)
 
 To hone in on the lane lines, I did not use draw_lines. I operated within my pipeline and fed the resulting vector, with the same dimensions as that of the Hough transform, into it. The process separates lines by sign then gathers the slope and y intercept of each. It then computes the median of each, since it’s robust to outliers. This, in addition to the y components of my trapezoid mask, allow me to compute x = (y - b) / m for the four endpoints of the two lines, giving me my (x, y) coordinates. Using weighted_img again completes my pipeline and returns the image with lane lines drawn on!
 
-![alt text][image3]
+![Lane Lines Drawn On](./test_images_output/final_example.jpg)
 
 
 ### 2. Identify potential shortcomings with your current pipeline
