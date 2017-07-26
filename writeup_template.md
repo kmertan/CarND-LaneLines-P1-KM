@@ -24,7 +24,7 @@ The goals / steps of this project are the following:
 
 My pipeline starts by making three copies of the image it reads in and extracting its x and y size. I then use two of the copies to select for white and yellow and combine them using weighted_img. 
 
-![alt text][image1]
+![alt text][image1](./test_images_output/white_yellow_example.jpg)
 
 Afterward, I masked that image with a trapezoid based on the x and y sizes extracted earlier.
 
