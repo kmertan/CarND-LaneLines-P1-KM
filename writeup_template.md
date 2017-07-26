@@ -11,11 +11,6 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: (./test_images_output/white_yellow_example.jpg) “Grayscale”
-[image2]: ./test_images_output/hough_example.jpg “Hough Transform”
-[image3]: ./test_images_output/final_example.jpg “Lane Lines Drawn On”
-
-
 ---
 
 ### Reflection
